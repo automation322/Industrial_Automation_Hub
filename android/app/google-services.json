@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "837732818783",
+    "project_id": "automation-hub-37eab",
+    "storage_bucket": "automation-hub-37eab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837732818783:android:2a7455d916965fcf3460ea",
+        "android_client_info": {
+          "package_name": "com.automation.automation_hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837732818783-5m6vp0q4de7jos53410rgn3h3uimi6ds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.automation.automation_hub",
+            "certificate_hash": "00bea6dd94b890986e2bca881c3b6e69ec709f56"
+          }
+        },
+        {
+          "client_id": "837732818783-53rqo0u92uivl4rknnprkaceupi0djks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW9g--RG7MqE6goWI4jbemrXeeMYuxST8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837732818783-53rqo0u92uivl4rknnprkaceupi0djks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
