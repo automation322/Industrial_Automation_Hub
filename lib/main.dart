@@ -1,3 +1,4 @@
+import 'package:automation_hub/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'auth/view/login.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -19,7 +20,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Industrial_Automation_Hub',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        brightness: Brightness.light,
+        primaryColor: ThemeColors.Primarycolor,
+        fontFamily: "noto_sans",
+        textTheme: const TextTheme(
+          headline2: TextStyle(fontFamily: "noto_sans",fontSize: 16,color: Colors.amberAccent)
+        )
       ),
       home: const Login()
     );

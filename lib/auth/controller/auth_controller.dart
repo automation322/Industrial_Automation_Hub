@@ -14,7 +14,7 @@ Future<void> signup(BuildContext context) async {
   final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
   if (googleSignInAccount != null) {
     final GoogleSignInAuthentication googleSignInAuthentication =
-    await googleSignInAccount.authentication;
+        await googleSignInAccount.authentication;
     final AuthCredential authCredential = GoogleAuthProvider.credential(
         idToken: googleSignInAuthentication.idToken,
         accessToken: googleSignInAuthentication.accessToken);
@@ -26,7 +26,7 @@ Future<void> signup(BuildContext context) async {
     if (result != null) {
       print("login success");
       Navigator.pushReplacement(
-         context, MaterialPageRoute(builder: (context) => const Dashboard()));
+          context, MaterialPageRoute(builder: (context) => const Dashboard()));
     } // if result not null we simply call the MaterialpageRoute,
     // for go to the HomePage screen
   }
