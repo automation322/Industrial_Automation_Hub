@@ -18,15 +18,15 @@ class _LoginState extends State<Login> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 30),
-            child: Text(
-              "Industrial Automation",
-              style: TextStyle(
-                fontSize: 35,
-              ),
-            ),
-          ),
+          //const Padding(
+          // padding: EdgeInsets.only(left: 30),
+          //child: Text(
+          //"Industrial Automation",
+          //style: TextStyle(
+          //fontSize: 35,
+          //),
+          //),
+          //),
           const SizedBox(height: 47),
           ElevatedButton(
               onPressed: () {
