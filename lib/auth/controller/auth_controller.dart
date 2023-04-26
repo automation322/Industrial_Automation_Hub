@@ -3,6 +3,7 @@
 // creating firebase instance
 import 'package:automation_hub/auth/model/logged_in_user_model.dart';
 import 'package:automation_hub/dashboard/view/dashboard.dart';
+import 'package:automation_hub/utils/firebase_consts.dart';
 import 'package:automation_hub/utils/shared_preference.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -36,10 +37,10 @@ Future<bool> signup(BuildContext context) async {
       loginUser.createdAt = DateTime.now().toString();
 
       CollectionReference users =
-          FirebaseFirestore.instance.collection('users');
+          FirebaseFirestore.instance.collection(FirebaseCollections.userCollection);
 
 
-      users.add(loginUser.toJson());
+      users.doc(result.user?.uid).set(loginUser.toJson());
 
 
       if (result != null) {

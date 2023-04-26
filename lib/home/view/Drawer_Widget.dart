@@ -1,6 +1,8 @@
 import 'package:automation_hub/terms_and_conditions/view/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 
+import '../../privacy_policy/view/privacy_policy_screen.dart';
+
 Drawer customDrawer(BuildContext context) {
   return Drawer(
     child: ListView(
@@ -53,9 +55,12 @@ Drawer customDrawer(BuildContext context) {
               leading: const Icon(Icons.gavel),
               title: const Text("terms and conditions"),
             ),
-            const ListTile(
-              leading: Icon(Icons.admin_panel_settings),
-              title: Text("privacy policy"),
+             ListTile(
+               onTap: (){
+                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PrivacyPolicyScreen(),));
+               },
+              leading: const Icon(Icons.admin_panel_settings),
+              title: const Text("privacy policy"),
             ),
             const ListTile(
               leading: Icon(Icons.info),
