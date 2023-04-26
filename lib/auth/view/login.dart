@@ -1,7 +1,10 @@
+import 'dart:core';
 import 'package:automation_hub/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 
+import '../../dashboard/view/dashboard.dart';
 import '../../utils/colors.dart';
+import '../../utils/shared_preference.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -14,6 +17,7 @@ class _LoginState extends State<Login> {
   bool isAgreeTc = false;
   double height = 0.0;
   double width = 0.0;
+  bool _loding = false;
   @override
   Widget build(BuildContext context) {
     height = MediaQuery.of(context).size.height;
@@ -35,7 +39,7 @@ class _LoginState extends State<Login> {
                       isAgreeTc = !isAgreeTc;
                     });
                   }),
-              Container(
+              SizedBox(
                 width: width / 1.3,
                 child: const Text(
                   "I agree the Terms&Condition of the application",
@@ -46,16 +50,37 @@ class _LoginState extends State<Login> {
             ],
           ),
           const SizedBox(height: 50),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                maximumSize: Size(width / 1.5, height * 0.06),
-              ),
-              onPressed: isAgreeTc == true
-                  ? () {
-                      signup(context);
-                    }
-                  : null,
-              child: const Text("Login with Google"))
+          _loding == true
+              ? CircularProgressIndicator(
+                  color: ThemeColors.Primarycolor,
+                )
+              : ElevatedButton.icon(
+                  icon: const Icon(Icons.login),
+                  label: const Text("Login with Google"),
+                  style: ElevatedButton.styleFrom(
+                    maximumSize: Size(width / 1.4, height * 0.09),
+                  ),
+                  onPressed: isAgreeTc == true
+                      ? () async {
+                          setState(() {
+                            _loding = true;
+                          });
+                          bool isLogin = false;
+                          isLogin = await signup(context);
+                          if (isLogin == true) {
+                            Shared_Preference.setBool(
+                                SharedPreferenceKeys.isLogin, true);
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Dashboard()));
+                            setState(() {
+                              _loding = false;
+                            });
+                          }
+                        }
+                      : null,
+                )
         ],
       ),
     );
