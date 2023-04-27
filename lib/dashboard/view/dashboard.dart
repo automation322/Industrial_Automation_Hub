@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../cart/view/cart_screen.dart';
@@ -16,9 +15,9 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    CartScreen(),
-    SettingsScreen(),
+    const HomeScreen(),
+    const CartScreen(),
+    const SettingsScreen(),
   ];
 
   @override

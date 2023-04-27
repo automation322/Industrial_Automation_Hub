@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: ThemeColors.Primarycolor,
-        fontFamily: "noto_sans",
+        fontFamily: "NotoSans-ExtraBold",
         textTheme: const TextTheme(
-          headline2: TextStyle(fontFamily: "noto_sans",fontSize: 16,color: Colors.amberAccent)
+          headline2: TextStyle(fontFamily: "NotoSans-ExtraBold",fontSize: 16,color: Colors.amberAccent)
         )
       ),
       home: const Login()
