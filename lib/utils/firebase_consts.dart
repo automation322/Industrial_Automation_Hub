@@ -1,7 +1,6 @@
-
 class FirebaseCollections {
-static String userCollection = "users";
+  static String userCollection = "users";
 
-//constant for No internet connectivity
-static String noInternetString = "No Internet Connection";
+  //constant for No internet connectivity
+  static String noInternetString = "No Internet Connection";
 }

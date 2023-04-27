@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+
 import '../../utils/display_html_data.dart';
+import '../../utils/size_constants.dart';
 import '../controller/privacy_policy_controller.dart';
 
 class PrivacyPolicyScreen extends StatefulWidget {
@@ -57,3 +61,4 @@ class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
     );
   }
 }
+

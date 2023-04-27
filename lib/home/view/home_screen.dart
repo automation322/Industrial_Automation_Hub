@@ -1,10 +1,11 @@
-import 'package:automation_hub/utils/size_constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../../search/view/search_screen.dart';
 import '../../utils/colors.dart';
 import 'Drawer_Widget.dart';
 import 'banner_Widget.dart';
-import 'homepage_display_item.dart';
+import 'homepage_display_products_widget.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -39,24 +40,33 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SearchScreen(),
+                    ));
+              },
+              icon: const Icon(Icons.search))
+        ],
         elevation: 1,
         backgroundColor: Colors.white,
       ),
       drawer: customDrawer(context),
-      body: Column(
-        children: [
-          const BannerCrousel(),
-          const Text("Featured Product"),
-          ListView.builder(
-            itemCount: 3,
-            itemBuilder: (context, index) => const HomePageDisplayItem(
-              productImagePath: "assets/images/image_1.jpg",
-              productName: "product name",
-              productPrice: "Rs. 200",
-            ),
-          )
-        ],
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            const BannerCrousel(),
+            HomepageDisplayProducts(productListName: "Featured Product"),
+            HomepageDisplayProducts(
+                productListName: "New Products", categoryName: "new"),
+          ],
+        ),
       ),
     );
   }
 }
+

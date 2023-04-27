@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../cart/view/cart_screen.dart';
@@ -14,15 +15,14 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int _selectedIndex = 0;
-  static final List<Widget> _widgetOptions = <Widget>[
-    const HomeScreen(),
-    const CartScreen(),
-    const SettingsScreen(),
+  List<Widget> _widgetOptions = <Widget>[
+    HomeScreen(),
+    CartScreen(),
+    SettingsScreen(),
   ];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -50,13 +50,13 @@ class _DashboardState extends State<Dashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: Colors.pink,
+            label: 'Setting',
+            backgroundColor: Colors.purple,
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: ThemeColors.Primarycolor,
-        unselectedItemColor: ThemeColors.unselectediconcolor,
+        selectedItemColor: ThemeColors.primaryColor,
+        unselectedItemColor: ThemeColors.unselectedIconColor,
         onTap: _onItemTapped,
       ),
     );

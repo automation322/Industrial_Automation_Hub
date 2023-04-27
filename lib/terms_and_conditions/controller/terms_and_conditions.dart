@@ -1,11 +1,28 @@
 import 'package:automation_hub/api_services/api_services.dart';
 import '../../api_services/environment.dart';
 
-class TermsAndConditionsController{
-  static Future termsAndCondition() async{
+class TermsAndConditionController {
+  static Future termsAndCondition() async {
     String params = "?token=7WyIvzkTPkoQCIIiLUV9JBh46pHId44B";
-    Uri tcurl = Uri.parse(Environment.base_url + EndPoints.live + params);
-    dynamic tcApicall =  await ApiServices.getMethod(tcurl);
-    return tcApicall.body;
+    Uri tcUrl = Uri.parse(Environment.base_url + EndPoints.live + params);
+    dynamic tcApiCall = await ApiServices.getMethod(tcUrl);
+    return tcApiCall.body;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

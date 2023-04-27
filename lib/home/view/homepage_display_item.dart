@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +11,11 @@ class HomePageDisplayItem extends StatelessWidget {
     required this.productImagePath,
     required this.productName,
     required this.productPrice,
+    required this.onTap,
   }) : super(key: key);
 
   final String productImagePath, productName, productPrice;
-
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +33,12 @@ class HomePageDisplayItem extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
-                  child: Image.asset(
-                    productImagePath,
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    width: MediaQuery.of(context).size.width * 0.25,
-                    fit: BoxFit.fill,
+                  child: CachedNetworkImage(
+                    imageUrl: productImagePath,
+                    placeholder: (context, url) =>
+                        const CircularProgressIndicator(),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                   ),
                 ),
                 const SizedBox(
@@ -61,19 +64,22 @@ class HomePageDisplayItem extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     Container(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20)),
                         child: ColoredBox(
-                          color: ThemeColors.Primarycolor,
+                          color: ThemeColors.primaryColor,
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              return onTap();
+                            },
                             icon: const Icon(Icons.add),
                             color: Colors.white,
                           ),
                         ),
                       ),
-                    ),
+                    )
                   ],
                 )
               ],
