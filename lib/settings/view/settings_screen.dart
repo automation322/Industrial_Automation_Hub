@@ -1,5 +1,3 @@
-import 'package:automation_hub/dashboard/controller/controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../liked_products/view/liked_products_screen.dart';
@@ -15,7 +13,7 @@ class SettingsScreen extends StatelessWidget {
         children: [
           SizedBox(
               height: MediaQuery.of(context).size.height / 2,
-              child: const Center(child: Text("your logo"))),
+              child: Image.asset("assets/images/splash.png")),
           ListTile(
             title: const Text("Orders"),
             trailing: const Icon(Icons.chevron_right),

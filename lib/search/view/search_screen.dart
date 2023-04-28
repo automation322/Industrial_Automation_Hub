@@ -6,7 +6,7 @@ import '../../product_detail/view/product_detail_screen.dart';
 import '../../utils/size_constants.dart';
 
 class SearchScreen extends StatefulWidget {
-  SearchScreen({Key? key}) : super(key: key);
+  const SearchScreen({Key? key}) : super(key: key);
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();

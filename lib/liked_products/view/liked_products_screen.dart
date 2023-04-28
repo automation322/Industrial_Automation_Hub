@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../product_detail/view/product_detail_screen.dart';
@@ -25,7 +24,7 @@ class _LikedProductsScreenState extends State<LikedProductsScreen> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.chevron_left)),
+            icon: const Icon(Icons.chevron_left)),
       ),
       body: Column(
         children: [
@@ -64,7 +63,7 @@ class _LikedProductsScreenState extends State<LikedProductsScreen> {
                       }).toList(),
                     ));
               } else {
-                return Center(child: Text("No orders found"));
+                return const Center(child: Text("No orders found"));
               }
             },
           ),

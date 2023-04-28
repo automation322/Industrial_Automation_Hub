@@ -6,14 +6,14 @@ import '../../utils/display_html_data.dart';
 import '../../utils/size_constants.dart';
 import '../controller/privacy_policy_controller.dart';
 
-class PrivacyPolicyScreen extends StatefulWidget {
-  const PrivacyPolicyScreen({Key? key}) : super(key: key);
+class PrivacyPolicy extends StatefulWidget {
+  const PrivacyPolicy({Key? key}) : super(key: key);
 
   @override
-  State<PrivacyPolicyScreen> createState() => _PrivacyPolicyScreenState();
+  State<PrivacyPolicy> createState() => _PrivacyPolicyState();
 }
 
-class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
+class _PrivacyPolicyState extends State<PrivacyPolicy> {
   String _ppResponse = "";
   bool _loading = false;
   @override

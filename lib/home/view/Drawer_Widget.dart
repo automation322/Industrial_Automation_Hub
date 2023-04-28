@@ -73,6 +73,11 @@ Drawer customDrawer(BuildContext context) {
               title: const Text("Terms & conditions"),
             ),
             ListTile(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const PrivacyPolicy(),
+                ));
+              },
               leading: const Icon(Icons.admin_panel_settings),
               title: const Text("Privacy policy"),
             ),

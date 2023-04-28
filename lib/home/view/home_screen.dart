@@ -58,8 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
-          children: [
-            const BannerCrousel(),
+          children: const [
+            BannerCrousel(),
             HomepageDisplayProducts(productListName: "Featured Product"),
             HomepageDisplayProducts(
                 productListName: "New Products", categoryName: "new"),

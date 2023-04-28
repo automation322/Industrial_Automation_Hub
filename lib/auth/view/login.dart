@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset("assets/app_icon_splash/app_icon.png", fit: BoxFit.fill),
+          Image.asset("assets/app_icon_splash/splash.png", fit: BoxFit.fill),
           Row(
             children: [
               Checkbox(

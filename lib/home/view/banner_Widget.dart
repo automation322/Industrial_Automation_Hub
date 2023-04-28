@@ -20,7 +20,7 @@ class _BannerCrouselState extends State<BannerCrousel> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.26,
       child: Stack(

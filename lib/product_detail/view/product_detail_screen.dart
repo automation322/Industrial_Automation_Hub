@@ -121,7 +121,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           .bodyLarge!
                           .copyWith(color: Colors.grey),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Text(
